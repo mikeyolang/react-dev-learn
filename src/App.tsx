@@ -3,13 +3,14 @@ import "./app.css";
 import TodoItem from "./components/TodoItem/TodoItem";
 
 const App = () => {
-  const tods: Array<{ title: string; done: boolean }> = [
-    { title: "Wash Utensils", done: false },
-    { title: "Do homework", done: true },
+  const tods: Array<{ title: string; done: boolean ;coment:string}> = [
+    { title: "Wash Utensils", done: false ,coment:"Very hectic"},
+    { title: "Do homework", done: true,coment:"Some were complicated" },
+    { title: "Work out", done: true,coment:"Alot of fun" },
   ];
 
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState<Array<{ title: string; done: boolean }>>([
+  const [todos, setTodos] = useState<Array<{ title: string; done: boolean ;coment:string}>>([
     ...tods,
   ]);
 
@@ -40,6 +41,7 @@ const App = () => {
           <th>Number</th>
           <th>Title</th>
           <th>state</th>
+          <th>Comments</th>
         </tr>
 
         {todos.map((todo, index) => (
@@ -48,6 +50,7 @@ const App = () => {
             number={index}
             name={todo.title}
             done={todo.done}
+            coment={todo.coment}
           />
         ))}
       </table>

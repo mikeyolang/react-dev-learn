@@ -3,7 +3,8 @@ import "./TodoItem.css";
 const TodoItem: React.FC<{ 
   name: string; 
   done: boolean; 
-  number: number 
+  number: number ;
+  coment:string
 }> = (
  {done,number,name}
 ) => {
@@ -12,6 +13,7 @@ const TodoItem: React.FC<{
       <td>{number + 1}</td>
       <td>{name}</td>
       <td>{done ? "Done" : "Not done"}</td>
+      <td></td>
     </tr>
   );
 };
